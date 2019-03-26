@@ -1,0 +1,51 @@
+
+
+<h3>Commande</h3>
+
+<fieldset>
+    <div>
+        
+        <input type="hidden" id="id" value="<?= $ttt['Id']; ?>" name="id">
+        <input type="hidden" id="price" value="<?= $ttt['SalePrice']; ?>" name="price">
+        <div class="detail">
+            <div class="img" id="img-bak" style="background-image: url(<?= $wwwUrl; ?>/images/meals/<?= $ttt['Photo']; ?>)"><input type="hidden" name="Photo" value="<?= $ttt['Photo']; ?>"></div>
+            <article class="meal-details">
+                <div id="meal">Title: <?= $ttt['Name']; ?><input type="hidden" name="Name" value="<?= $ttt['Name']; ?>"></div>
+                <div class="price">Prix: <span><?= $ttt['SalePrice']; ?><input type="hidden" name="SalePrice" value="<?= $ttt['SalePrice']; ?>"></span>€</div>
+                <div><?= $ttt['Description']; ?><input type="hidden" name="Description" value="<?= $ttt['Description']; ?>"></div>
+                <div class="date"><?php echo date("Y-m-d H:i:s"); ?></div>
+            </article>
+        </div>
+        <div class="pr">
+            <div class="prprice">
+                <div class="price">Prix a paye:<span id="p"></span>€</div>
+                <div class="qte"><input type="number" id="qte"  class="quantity" name="quantite" placeholder="Quantite"></div>
+            </div>
+            <div>
+                 <input type="submit" class="button button-primary" name="">
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <table class="generic-table meal-list">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Qte</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <?php foreach($meals as $meal):?>
+        <tr>
+            <input type="hidden" name="mealid" value="<?= $meal['Id']; ?>">
+            <td><?= $meal['Name']; ?></td>
+            <td><?= $meal['qte']; ?></td>
+            <td><?= $meal['total']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+    </table>
+</fieldset>

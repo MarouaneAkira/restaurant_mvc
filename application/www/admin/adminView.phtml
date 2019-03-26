@@ -1,0 +1,24 @@
+<fieldset>
+<legend>Meals</legend>
+<?php foreach($ttt as $t): ?>
+    <div>
+    <table>
+    <tr>
+            <td><?= $t['Name']?></td>
+            <td><img src="<?= $wwwUrl;?>/images/meals/<?=$t['Photo']?>" alt="photo"></td>
+            <td><?= $t['Description'] ?></td>
+            <td><?= $t['SalePrice'] ?></td>
+            <td><?= $t['QuantityInStock'] ?></td>
+    </tr>
+    </table>
+    </div>
+<?php endforeach; ?>
+</fieldset>
+<fieldset>
+<legend>Commands</legend>
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+</fieldset>

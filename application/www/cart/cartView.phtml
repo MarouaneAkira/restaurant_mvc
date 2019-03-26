@@ -1,0 +1,32 @@
+<form action="<?= $requestUrl; ?>/payment" method="post">
+<table class="cart">
+<?php 
+  
+  
+  foreach ($meals as $meal) {
+    // foreach($meal as $m){?>
+      
+      <tr>
+      <td class="cart">
+      <input type="hidden" name="meal-<?= $meal['Id']; ?>" value="<?= $meal['Id']; ?>">
+      </td>
+      <td class="cart">
+      <?= $meal['Name']; ?>
+      </td>
+      <td class="cart">
+      <?= $meal['qte']; ?>
+      </td>
+      <td class="cart">
+      <?= $meal['total']; ?>
+      </td>
+      </tr>
+      
+    <?php // }
+  }
+
+  // var_dump($meals);
+
+ ?>
+ </table>
+ <input type="submit">
+ </form>
